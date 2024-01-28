@@ -1,4 +1,6 @@
+import javax.print.DocFlavor;
 import java.io.PrintStream;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -13,15 +15,16 @@ public class SkillBuilder1 {
         //TODO : Replace this comment with your code
         System.out.println("You're Jane's friend!");
         System.out.println("What's your name?");
-        String userName = input.next();
-        System.out.println(userName);
+        String userName = input.nextLine();
+
 
         System.out.println("Enter a floating-point number:");
         float spice = input.nextFloat();
-        System.out.println(spice);
         double spiceExpression = (4.0/3)*(Math.pow(2, (Math.sqrt(5)/Math.pow(spice, 3))));
-        System.out.println("Well" + userName + ", the spice value resulted in" + spiceExpression );;
-        System.out.println("And the converted value is" + Math.round(spice));
+        System.out.println("Well " + userName + ", the spice value resulted in " + spiceExpression );
+        int spiceNew = (int)(spiceExpression * 100);
+        double spiceFinal = (double)(spiceNew / 100.0);
+        System.out.println("And the converted value is " + spiceFinal);
 
     }
 
